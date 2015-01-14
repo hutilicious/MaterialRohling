@@ -9,6 +9,7 @@ import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.support.v7.app.ActionBarDrawerToggle;
 import android.support.v7.widget.Toolbar;
+import android.util.SparseArray;
 import android.view.Gravity;
 import android.view.Menu;
 import android.view.MenuItem;
@@ -93,6 +94,9 @@ public class MainActivity extends ActionBarActivity {
                     mDrawerLayout.closeDrawers();
                 }
                 Toast.makeText(v.getContext(), "Itemclick + Drawer close", Toast.LENGTH_SHORT).show();
+
+                // Update loaded Views
+                mViewPager.getAdapter().notifyDataSetChanged();
             }
         });
     }
@@ -143,6 +147,8 @@ public class MainActivity extends ActionBarActivity {
      */
     class SamplePagerAdapter extends PagerAdapter {
 
+        SparseArray<View> views = new SparseArray<View>();
+
         /**
          * @return the number of pages to display
          */
@@ -186,6 +192,8 @@ public class MainActivity extends ActionBarActivity {
             // Add the newly created View to the ViewPager
             container.addView(view);
 
+            views.put(position, view);
+
             // Return the View
             return view;
         }
@@ -197,6 +205,20 @@ public class MainActivity extends ActionBarActivity {
         @Override
         public void destroyItem(ViewGroup container, int position, Object object) {
             container.removeView((View) object);
+            views.remove(position);
+        }
+
+        @Override
+        public void notifyDataSetChanged() {
+            int key = 0;
+            for(int i = 0; i < views.size(); i++) {
+                key = views.keyAt(i);
+                View view = views.get(key);
+                // Change the content of this view
+                TextView txt = (TextView) view.findViewById(R.id.item_subtitle);
+                txt.setText("This Page has been changed after click, because it was already initiated");
+            }
+            super.notifyDataSetChanged();
         }
 
     }
