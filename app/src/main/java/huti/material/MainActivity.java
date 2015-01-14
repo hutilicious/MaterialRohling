@@ -16,6 +16,8 @@ import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
+import SlidingTabs.SlidingTabLayout;
+
 
 public class MainActivity extends ActionBarActivity {
 

@@ -1,4 +1,4 @@
-package huti.material;
+package SlidingTabs;
 
 import android.R;
 import android.content.Context;

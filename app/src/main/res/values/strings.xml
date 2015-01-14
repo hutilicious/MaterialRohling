@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">MaterialRohling</string>
+    <string name="app_name">Materialdesign</string>
     <string name="action_settings">Menuitem</string>
     <string name="font_fontFamily_medium">sans-serif</string>
 </resources>

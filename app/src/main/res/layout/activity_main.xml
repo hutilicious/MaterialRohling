@@ -22,7 +22,7 @@
 
             <include layout="@layout/toolbar_actionbar" />
 
-            <huti.material.SlidingTabLayout
+            <SlidingTabs.SlidingTabLayout
                 android:background="@color/tab_background"
                 android:id="@+id/sliding_tabs"
                 android:layout_width="match_parent"
