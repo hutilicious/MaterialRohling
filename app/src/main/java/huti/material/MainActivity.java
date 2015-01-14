@@ -216,7 +216,7 @@ public class MainActivity extends ActionBarActivity {
                 View view = views.get(key);
                 // Change the content of this view
                 TextView txt = (TextView) view.findViewById(R.id.item_subtitle);
-                txt.setText("This Page has been changed after click, because it was already initiated");
+                txt.setText("This Page "+ key +" has been changed after click, because it was already initiated");
             }
             super.notifyDataSetChanged();
         }
