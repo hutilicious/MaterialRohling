@@ -6,7 +6,8 @@
     android:id="@+id/navdrawer"
     android:background="@color/navdrawer_background"
     android:fitsSystemWindows="true"
-    android:orientation="vertical">
+    android:orientation="vertical"
+    android:clickable="true">
 
     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
         android:id="@+id/txtNavigation1"

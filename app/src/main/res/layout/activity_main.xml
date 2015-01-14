@@ -12,7 +12,6 @@
         android:id="@+id/main_content"
         android:layout_width="match_parent"
         android:orientation="vertical"
-        android:clickable="true"
         android:layout_height="match_parent">
 
         <LinearLayout style="@style/HeaderBar"
