@@ -41,10 +41,10 @@ public class MainActivity extends ActionBarActivity {
 
         mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
 
+        // Verwende einen eigenen Style für die Tabs
         mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
 
-        // mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
-
+        // Verwende eigene Tabnamen
         mSlidingTabLayout.setContentDescription(1, "Item1");
         mSlidingTabLayout.setContentDescription(2, "Item2");
         mSlidingTabLayout.setContentDescription(3, "Item3");
@@ -59,7 +59,6 @@ public class MainActivity extends ActionBarActivity {
         mViewPager.setAdapter(new SamplePagerAdapter());
 
         mSlidingTabLayout.setViewPager(mViewPager);
-
 
         if (mSlidingTabLayout != null) {
             mSlidingTabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
