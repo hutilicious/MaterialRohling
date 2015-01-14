@@ -48,15 +48,6 @@ public class MainActivity extends ActionBarActivity {
         // Verwende einen eigenen Style für die Tabs
         mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
 
-        // Verwende eigene Tabnamen
-        mSlidingTabLayout.setContentDescription(1, "Item1");
-        mSlidingTabLayout.setContentDescription(2, "Item2");
-        mSlidingTabLayout.setContentDescription(3, "Item3");
-        mSlidingTabLayout.setContentDescription(4, "Item4");
-        mSlidingTabLayout.setContentDescription(5, "Item5");
-        mSlidingTabLayout.setContentDescription(6, "Item6");
-        mSlidingTabLayout.setContentDescription(7, "Item7");
-
         Resources res = getResources();
         mSlidingTabLayout.setSelectedIndicatorColors(res.getColor(R.color.tab_color));
         mSlidingTabLayout.setDistributeEvenly(true);
