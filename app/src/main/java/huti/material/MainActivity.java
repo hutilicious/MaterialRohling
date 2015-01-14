@@ -40,6 +40,9 @@ public class MainActivity extends ActionBarActivity {
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
+
+        mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
+
         // mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
 
         mSlidingTabLayout.setContentDescription(1, "Item1");

@@ -16,6 +16,6 @@
     android:theme="@style/ActionBarThemeOverlay"
     android:popupTheme="@style/ActionBarPopupThemeOverlay"
     android:id="@+id/toolbar_actionbar"
-    android:background="@null"
+    android:background="@color/colorMain"
     android:layout_width="match_parent"
     android:layout_height="?actionBarSize" />

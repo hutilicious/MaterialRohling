@@ -27,6 +27,6 @@
         android:maxLines="1"
         android:singleLine="true"
         android:ellipsize="end"
-        android:text="Bibeldibabeldi" />
+        android:text="Navigation" />
 
 </LinearLayout>

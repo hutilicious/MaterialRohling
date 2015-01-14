@@ -1,11 +1,31 @@
 <resources>
+    <!-- Colors -->
+    <color name="colorMain">#0277bd</color>
+    <color name="colorMainDark">#01579b</color>
+    <color name="colorMainAccent">#e8eaf6</color>
+    <color name="colorMainText">#ffffff</color>
 
-    <color name="navdrawer_background">#FF00FF</color>
-    <color name="tab_background">#0000FF</color>
-    <color name="tab_color">#FF0000</color>
+    <color name="navdrawer_background">#F3F3F3</color>
+    <color name="tab_background">@color/colorMain</color>
+    <color name="tab_color">@color/colorMainAccent</color>
+
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
         <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorMain</item>
+
+        <!-- colorPrimaryDark is used for the status bar -->
+        <item name="colorPrimaryDark">@color/colorMainDark</item>
+
+        <!-- colorAccent is used as the default value for colorControlActivated
+             which is used to tint widgets -->
+        <item name="colorAccent">@color/colorMainAccent</item>
+
+        <item name="drawerArrowStyle">@style/ToolbarColorStyle</item>
+    </style>
+
+    <style name="ToolbarColorStyle" parent="Widget.AppCompat.DrawerArrowToggle">
+        <item name="color">#fff</item>
     </style>
 
     <style name="HeaderBar">
@@ -19,4 +39,8 @@
 
     <style name="ActionBarPopupThemeOverlay" parent="ThemeOverlay.AppCompat.Light" />
 
+    <!-- Misc -->
+    <style name="TabIndicator" />
+
+    <integer name="font_textStyle_medium">1</integer> <!-- bold -->
 </resources>

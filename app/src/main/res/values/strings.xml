@@ -1,8 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
 
-    <string name="app_name">material</string>
-    <string name="hello_world">Hello world!</string>
-    <string name="action_settings">Settings</string>
-
+    <string name="app_name">MaterialRohling</string>
+    <string name="action_settings">Menuitem</string>
+    <string name="font_fontFamily_medium">sans-serif</string>
 </resources>
