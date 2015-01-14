@@ -15,6 +15,7 @@ import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import SlidingTabs.SlidingTabLayout;
 
@@ -81,6 +82,19 @@ public class MainActivity extends ActionBarActivity {
                 }
             });
         }
+
+        // Click events for Navigation Drawer
+        TextView btn=(TextView) findViewById(R.id.txtNavigation1);
+        btn.setOnClickListener(new View.OnClickListener() {
+
+            @Override
+            public void onClick(View v) {
+                if (mDrawerLayout.isDrawerOpen(Gravity.START | Gravity.LEFT)) {
+                    mDrawerLayout.closeDrawers();
+                }
+                Toast.makeText(v.getContext(), "Itemclick + Drawer close", Toast.LENGTH_SHORT).show();
+            }
+        });
     }
 
 
