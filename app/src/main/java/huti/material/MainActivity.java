@@ -15,6 +15,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -39,22 +40,23 @@ public class MainActivity extends ActionBarActivity {
 
         mDrawerLayout = (DrawerLayout) findViewById(R.id.drawer_layout);
         mViewPager = (ViewPager) findViewById(R.id.view_pager);
-
+        mViewPager.setOffscreenPageLimit(7); // tabcachesize (=tabcount for better performance)
         mDrawerToggle = new ActionBarDrawerToggle(this, mDrawerLayout, mToolbar, R.string.app_name, R.string.app_name);
         mDrawerLayout.setDrawerListener(mDrawerToggle);
 
         mSlidingTabLayout = (SlidingTabLayout) findViewById(R.id.sliding_tabs);
 
-        // Verwende einen eigenen Style für die Tabs
+        // use own style rules for tab layout
         mSlidingTabLayout.setCustomTabView(R.layout.tab_indicator, android.R.id.text1);
 
         Resources res = getResources();
-        mSlidingTabLayout.setSelectedIndicatorColors(res.getColor(R.color.tab_color));
+        mSlidingTabLayout.setSelectedIndicatorColors(res.getColor(R.color.tab_indicator_color));
         mSlidingTabLayout.setDistributeEvenly(true);
-        mViewPager.setAdapter(new SamplePagerAdapter());
+        mViewPager.setAdapter(new MainTabs());
 
         mSlidingTabLayout.setViewPager(mViewPager);
 
+        // Tab events
         if (mSlidingTabLayout != null) {
             mSlidingTabLayout.setOnPageChangeListener(new ViewPager.OnPageChangeListener() {
                 @Override
@@ -76,18 +78,20 @@ public class MainActivity extends ActionBarActivity {
         }
 
         // Click events for Navigation Drawer
-        TextView btn=(TextView) findViewById(R.id.txtNavigation1);
-        btn.setOnClickListener(new View.OnClickListener() {
+        LinearLayout navButton = (LinearLayout) findViewById(R.id.txtNavButton);
+        navButton.setOnClickListener(new View.OnClickListener() {
 
             @Override
             public void onClick(View v) {
-                if (mDrawerLayout.isDrawerOpen(Gravity.START | Gravity.LEFT)) {
-                    mDrawerLayout.closeDrawers();
-                }
-                Toast.makeText(v.getContext(), "Itemclick + Drawer close", Toast.LENGTH_SHORT).show();
 
-                // Update loaded Views
-                mViewPager.getAdapter().notifyDataSetChanged();
+                // close drawer if you want
+                /*if (mDrawerLayout.isDrawerOpen(Gravity.START | Gravity.LEFT)) {
+                    mDrawerLayout.closeDrawers();
+                }*/
+                Toast.makeText(v.getContext(), "navitem clicked", Toast.LENGTH_SHORT).show();
+
+                // update loaded Views if you want
+                //mViewPager.getAdapter().notifyDataSetChanged();
             }
         });
     }
@@ -136,7 +140,7 @@ public class MainActivity extends ActionBarActivity {
      * this class is the {@link #getPageTitle(int)} method which controls what is displayed in the
      * {@link SlidingTabLayout}.
      */
-    class SamplePagerAdapter extends PagerAdapter {
+    class MainTabs extends PagerAdapter {
 
         SparseArray<View> views = new SparseArray<View>();
 
@@ -166,7 +170,7 @@ public class MainActivity extends ActionBarActivity {
          */
         @Override
         public CharSequence getPageTitle(int position) {
-            return "Item " + (position + 1);
+            return "Page " + (position + 1);
         }
 
         /**
@@ -179,7 +183,7 @@ public class MainActivity extends ActionBarActivity {
             View view = getLayoutInflater().inflate(R.layout.pager_item,
                     container, false);
             TextView txt = (TextView) view.findViewById(R.id.item_subtitle);
-            txt.setText("Page:"+position);
+            txt.setText("Content: " + (position + 1));
             // Add the newly created View to the ViewPager
             container.addView(view);
 
@@ -201,13 +205,13 @@ public class MainActivity extends ActionBarActivity {
 
         @Override
         public void notifyDataSetChanged() {
-            int key = 0;
-            for(int i = 0; i < views.size(); i++) {
-                key = views.keyAt(i);
-                View view = views.get(key);
+            int position = 0;
+            for (int i = 0; i < views.size(); i++) {
+                position = views.keyAt(i);
+                View view = views.get(position);
                 // Change the content of this view
                 TextView txt = (TextView) view.findViewById(R.id.item_subtitle);
-                txt.setText("This Page "+ key +" has been changed after click, because it was already initiated");
+                txt.setText("This Page " + (position + 1) + " has been refreshed");
             }
             super.notifyDataSetChanged();
         }

@@ -4,10 +4,14 @@
     <color name="colorMainDark">#01579b</color>
     <color name="colorMainAccent">#e8eaf6</color>
     <color name="colorMainText">#ffffff</color>
+    <color name="colorMainBg">#FAFAFA</color>
 
-    <color name="navdrawer_background">#F3F3F3</color>
+    <color name="colorText">#000000</color>
+    <color name="colorTextLight">#FFFFFF</color>
+
+    <color name="navdrawer_background">#FFFFFF</color>
     <color name="tab_background">@color/colorMain</color>
-    <color name="tab_color">@color/colorMainAccent</color>
+    <color name="tab_indicator_color">#FFF</color>
 
     <!-- Base application theme. -->
     <style name="AppTheme" parent="Theme.AppCompat.Light.NoActionBar">
@@ -20,6 +24,8 @@
         <!-- colorAccent is used as the default value for colorControlActivated
              which is used to tint widgets -->
         <item name="colorAccent">@color/colorMainAccent</item>
+
+        <item name="android:windowBackground">@color/colorMainBg</item>
 
         <item name="drawerArrowStyle">@style/ToolbarColorStyle</item>
     </style>

@@ -1,5 +1,4 @@
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="@dimen/navdrawer_width"
     android:layout_height="match_parent"
     android:layout_gravity="start"
@@ -7,55 +6,113 @@
     android:background="@color/navdrawer_background"
     android:fitsSystemWindows="true"
     android:orientation="vertical"
-    android:clickable="true">
+    android:clickable="true"
+    android:weightSum="1"
+    android:elevation="10dp">
 
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/txtNavigation1"
+    <ScrollView
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:gravity="center_vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textColor="@color/colorMainDark"
-        android:background="?android:attr/activatedBackgroundIndicator"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:text="Navigation1"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/txtNavigation2"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:gravity="center_vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textColor="@color/colorMainDark"
-        android:background="?android:attr/activatedBackgroundIndicator"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:text="Navigation2"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/txtNavigation3"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:gravity="center_vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textColor="@color/colorMainDark"
-        android:background="?android:attr/activatedBackgroundIndicator"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:text="Navigation3"/>
-    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
-        android:id="@+id/txtNavigation4"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceListItemSmall"
-        android:gravity="center_vertical"
-        android:paddingLeft="16dp"
-        android:paddingRight="16dp"
-        android:textColor="@color/colorMainDark"
-        android:background="?android:attr/activatedBackgroundIndicator"
-        android:minHeight="?android:attr/listPreferredItemHeightSmall"
-        android:text="Navigation4"/>
+        android:layout_height="match_parent"
+        android:id="@+id/navDrawerScrollView">
+
+        <LinearLayout
+            android:orientation="vertical"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/navDrawerLayout">
+
+            <!-- Image Header-->
+
+            <LinearLayout
+                android:orientation="vertical"
+                android:layout_width="match_parent"
+                android:layout_height="210dp"
+                android:background="@drawable/img_navdrawerheader"
+                android:gravity="left|bottom"
+                android:id="@+id/ltDrawerHeader">
+
+                <TextView
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/imgDrawerHeader"
+                    android:adjustViewBounds="true"
+                    android:src="@drawable/img_navdrawerheader"
+                    android:text="Materialdesign"
+                    android:gravity="bottom"
+                    android:textSize="25dp"
+                    android:textColor="#ffffff"
+                    android:paddingLeft="16dp"
+                    android:fontFamily="sans-serif"
+                    android:layout_marginBottom="5dp" />
+
+                <!-- Slogan -->
+                <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/txtNavSlogan"
+                    android:layout_width="match_parent"
+                    android:layout_height="20dp"
+                    android:fontFamily="sans-serif"
+                    android:textColor="#E9E9E9"
+                    android:text="Template"
+                    android:paddingLeft="16dp"
+                    android:layout_marginBottom="5dp"
+                    android:textSize="15dp"
+                    android:ellipsize="end" />
+
+
+
+            </LinearLayout>
+
+            <View
+                android:layout_width="wrap_content"
+                android:layout_height="1dp"
+                android:background="#888" />
+
+            <!-- Button -->
+
+            <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                android:id="@+id/txtNavButtonBackground"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:background="@android:color/transparent"
+                android:orientation="vertical"
+                android:layout_marginTop="5dp">
+
+                <LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+                    android:id="@+id/txtNavButton"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="?android:attr/selectableItemBackground"
+                    android:orientation="horizontal">
+
+                    <ImageView
+                        android:layout_width="30dp"
+                        android:layout_height="20dp"
+                        android:id="@+id/txtNavButtonImage"
+                        android:layout_gravity="center_vertical"
+                        android:layout_marginLeft="15dp"
+                        android:src="@drawable/ic_nav_home"
+                        android:layout_marginRight="0dp" />
+
+                    <TextView xmlns:android="http://schemas.android.com/apk/res/android"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:padding="16dp"
+                        android:textColor="@color/colorText"
+                        android:minHeight="?android:attr/listPreferredItemHeightSmall"
+                        android:background="@android:color/transparent"
+                        android:text="Home"
+                        android:textStyle="bold"
+                        android:singleLine="false"
+                        android:focusableInTouchMode="true"
+                        android:fontFamily="sans-serif"
+                        android:focusable="false"
+                        android:elegantTextHeight="false"
+                        android:editable="false" />
+
+                </LinearLayout>
+            </LinearLayout>
+
+        </LinearLayout>
+    </ScrollView>
 
 </LinearLayout>
