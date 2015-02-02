@@ -96,7 +96,6 @@
                     <TextView xmlns:android="http://schemas.android.com/apk/res/android"
                         android:layout_width="match_parent"
                         android:layout_height="wrap_content"
-                        android:padding="16dp"
                         android:textColor="@color/colorText"
                         android:minHeight="?android:attr/listPreferredItemHeightSmall"
                         android:background="@android:color/transparent"
@@ -107,7 +106,11 @@
                         android:fontFamily="sans-serif"
                         android:focusable="false"
                         android:elegantTextHeight="false"
-                        android:editable="false" />
+                        android:editable="false"
+                        android:paddingTop="16dp"
+                        android:paddingRight="16dp"
+                        android:paddingBottom="16dp"
+                        android:paddingLeft="25dp" />
 
                 </LinearLayout>
             </LinearLayout>
