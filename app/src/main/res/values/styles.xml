@@ -48,5 +48,9 @@
     <!-- Misc -->
     <style name="TabIndicator" />
 
+    <declare-styleable name="ScrimInsetsView">
+        <attr name="insetForeground" format="reference|color" />
+    </declare-styleable>
+
     <integer name="font_textStyle_medium">1</integer> <!-- bold -->
 </resources>
