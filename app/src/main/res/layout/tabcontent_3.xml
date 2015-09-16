@@ -6,16 +6,10 @@
     android:orientation="vertical">
 
     <TextView
-        android:id="@+id/item_subtitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:textAppearance="?android:attr/textAppearanceLarge"
-        android:text="Page:"/>
-
-    <TextView
         android:id="@+id/item_title"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:textSize="80sp" />
+        android:textSize="20sp"
+        android:text="some text tab 3" />
 
 </LinearLayout>

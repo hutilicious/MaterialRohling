@@ -1,7 +1,8 @@
+<!-- define how a tab looks -->
 <TextView
     xmlns:android="http://schemas.android.com/apk/res/android"
     style="@style/TabIndicator"
-    android:id="@android:id/text1"
+    android:id="@+id/toolbar_tab_txtCaption"
     android:background="?android:selectableItemBackground"
     android:layout_width="wrap_content"
     android:paddingLeft="16dp"

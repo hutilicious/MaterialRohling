@@ -38,6 +38,6 @@
     </LinearLayout>
 
     <!-- Nav drawer -->
-    <include layout="@layout/navdrawer" />
+    <include layout="@layout/navigation_drawer" />
 
 </android.support.v4.widget.DrawerLayout>

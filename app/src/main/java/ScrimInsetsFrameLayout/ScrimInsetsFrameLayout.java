@@ -1,4 +1,4 @@
-package huti.material;
+package ScrimInsetsFrameLayout;
 
 import android.content.Context;
 import android.content.res.TypedArray;
